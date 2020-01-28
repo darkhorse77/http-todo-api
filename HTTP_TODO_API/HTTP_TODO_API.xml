@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HTTP_TODO_API</name>
+    </assembly>
+    <members>
+        <member name="T:HTTP_TODO_API.Controllers.CustomListsController">
+            <summary>
+            CRUD интерфейс для работы с пользовательскими списками
+            </summary>
+        </member>
+        <member name="M:HTTP_TODO_API.Controllers.CustomListsController.Get">
+            <summary>
+            Получение всех пользовательских списков
+            </summary>
+            <returns>Коллекция списков</returns>
+        </member>
+        <member name="M:HTTP_TODO_API.Controllers.CustomListsController.Get(System.Int32,HTTP_TODO_API.Models.SortState)">
+            <summary>
+            Получение списка по id
+            </summary>
+            <param name="id"></param>
+            <param name="sort">Сортировка задач в списке</param>
+            <returns>Список с данным id</returns>
+        </member>
+        <member name="M:HTTP_TODO_API.Controllers.CustomListsController.Post(HTTP_TODO_API.Models.TaskList)">
+            <summary>
+            Создание нового списка
+            </summary>
+            <param name="list">Обьект списка</param>
+            <returns></returns>
+        </member>
+        <member name="M:HTTP_TODO_API.Controllers.CustomListsController.Put(HTTP_TODO_API.Models.TaskList)">
+            <summary>
+            Изменение списка
+            </summary>
+            <param name="list">Изменённый список</param>
+            <returns></returns>
+        </member>
+        <member name="M:HTTP_TODO_API.Controllers.CustomListsController.Delete(System.Int32)">
+            <summary>
+            Удаление списка по id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HTTP_TODO_API.Controllers.SearchController.Get(System.String)">
+            <summary>
+            Поиск задач по имени во всех списках
+            </summary>
+            <param name="condition">Искомое выражение</param>
+            <returns>Список задач, совпадающих по имени с условием</returns>
+        </member>
+        <member name="T:HTTP_TODO_API.Controllers.SmartListsController">
+            <summary>
+            Доступ к умным спискам
+            </summary>
+        </member>
+        <member name="M:HTTP_TODO_API.Controllers.SmartListsController.All(HTTP_TODO_API.Models.SortState)">
+            <summary>
+            Получение всех задач
+            </summary>
+            <param name="sort">Параметр сортировки</param>
+            <returns></returns>
+        </member>
+        <member name="M:HTTP_TODO_API.Controllers.SmartListsController.Planned(HTTP_TODO_API.Models.SortState)">
+            <summary>
+            Получение всех задач, имеющих срок выполнения
+            </summary>
+            <param name="sort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HTTP_TODO_API.Controllers.SmartListsController.Important(HTTP_TODO_API.Models.SortState)">
+            <summary>
+            Получение всех задач с высоким приоритетом
+            </summary>
+            <param name="sort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HTTP_TODO_API.Controllers.SmartListsController.Todays(HTTP_TODO_API.Models.SortState)">
+            <summary>
+            Получение всех задач, у которых дедлайн сегодня
+            </summary>
+            <param name="sort"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HTTP_TODO_API.Controllers.TaskController">
+            <summary>
+            CRUD интерфейс для работы с задачами
+            </summary>
+        </member>
+        <member name="M:HTTP_TODO_API.Controllers.TaskController.Get(System.Nullable{System.Int32})">
+            <summary>
+            Получение задачи по Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HTTP_TODO_API.Controllers.TaskController.Post(HTTP_TODO_API.Models.Task)">
+            <summary>
+            Создание новой задачи
+            </summary>
+            <param name="task"></param>
+            <remarks>Запрос посылаем без Id, так как он автоматически даётся базой данных</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:HTTP_TODO_API.Controllers.TaskController.Put(HTTP_TODO_API.Models.Task)">
+            <summary>
+            Изменение задачи
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HTTP_TODO_API.Controllers.TaskController.Delete(System.Int32[])">
+            <summary>
+            Удаление задачи по id
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HTTP_TODO_API.Models.Priority">
+            <summary>
+            0 - Low
+            1 - Medium
+            2 - High
+            </summary>
+        </member>
+        <member name="T:HTTP_TODO_API.Models.SortState">
+            <summary>
+            0 - Importance,
+            1 - ImportanceDesc,
+            2 - Deadline,
+            3 - DeadLineDesc,
+            4 - Сompleted,
+            5 - Active,
+            6 - Alphabet,
+            7 - AlphabetDesc,
+            8 - Created,
+            9 - CreatedDesc
+            </summary>
+        </member>
+        <member name="T:HTTP_TODO_API.Models.Status">
+            <summary>
+            0 - Active
+            1 - Done
+            </summary>
+        </member>
+    </members>
+</doc>
